@@ -20,7 +20,11 @@ description: 1日の終わりにログを処理し、資産を抽出し、コン
     *   `.\00_システム\01_Prompts\Workflow_Prompts\Today_Finish\03_Context_Updater.md` を読み込む。
     *   今日の実績と `Active_Context.md` を比較し、コンテキストの更新案を作成する。
     *   **重要**: ここでファイル（Active_Contextなど）を直接書き換えてはいけません。あくまで「提案」です。また、日誌ファイルへの追記も行わず、次のステップでユーザーに通知します。
-6.  **ユーザーへの通知**:
-    *   処理結果の概要と、コンテキスト更新案（レビュー用）を提示する。
-    *   **重要: ユーザーへのメッセージは、必ず「日本語」で記述すること。**
+7.  **GitHubセーブ (Auto-Save)**:
+    *   // turbo
+    *   以下のコマンドを順に実行し、GitHubへバックアップを行う。
+    *   `git add .`
+    *   `git commit -m "Auto-Save: %DATE% %TIME%"` (※時間の取得が難しければ "Auto-Save: Today Finish" 等で可)
+    *   `git push origin main`
+    *   ユーザーへの完了報告に「セーブも完了しました」と付け加える。
 
