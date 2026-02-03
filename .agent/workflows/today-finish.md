@@ -12,15 +12,19 @@ description: 1日の終わりにログを処理し、資産を抽出し、コン
     *   `.\00_システム\01_Prompts\Workflow_Prompts\Today_Finish\01_Log_Analyst.md` を読み込む。
     *   「🧠 思考と感情のログ」セクションを読み込み、誤字修正と構造化（事実と感情の分離）を行い、同セクションを更新する。
 
-3.  **フェーズ2: 資産抽出 (Asset Extractor)**:
+3.  **フェーズ1.5: ルーティン・レビュー (Routine Reviewer)**:
+    *   `.\00_システム\01_Prompts\Workflow_Prompts\Today_Finish\01b_Routine_Reviewer.md` を読み込む。
+    *   日誌の「今日の積み上げ」セクションにある `(🤖 AI Review):` 欄に、実績に基づいたフィードバックを記入する。
+
+4.  **フェーズ2: 資産抽出 (Asset Extractor)**:
     *   `.\00_システム\01_Prompts\Workflow_Prompts\Today_Finish\02_Asset_Extractor.md` を読み込む。
     *   整形されたログから「アイデア」「価値観」「スキル」「人脈」を抽出し、「💎 抽出された情報」セクションに追記する。
 
-4.  **フェーズ3: 戦略的更新 (Context Updater)**:
+5.  **フェーズ3: 戦略的更新 (Context Updater)**:
     *   `.\00_システム\01_Prompts\Workflow_Prompts\Today_Finish\03_Context_Updater.md` を読み込む。
     *   今日の実績と `Active_Context.md` を比較し、コンテキストの更新案を作成する。
     *   **重要**: ここでファイル（Active_Contextなど）を直接書き換えてはいけません。あくまで「提案」です。また、日誌ファイルへの追記も行わず、次のステップでユーザーに通知します。
-7.  **GitHubセーブ (Auto-Save)**:
+6.  **GitHubセーブ (Auto-Save)**:
     *   // turbo
     *   以下のコマンドを順に実行し、GitHubへバックアップを行う。
     *   `git add .`
